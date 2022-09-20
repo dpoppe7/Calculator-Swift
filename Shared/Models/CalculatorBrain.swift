@@ -25,7 +25,7 @@ struct CalculatorBrain {
         "+": .binaryOperator(+),
         "-": .binaryOperator(-),
         "*": .binaryOperator(*),
-        "+": .binaryOperator(/),
+        "÷": .binaryOperator(/),
         "=": .equals,
         "C": .clear
     ]
