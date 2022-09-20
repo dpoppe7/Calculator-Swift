@@ -26,8 +26,17 @@ extension CalculatorView {
         private var digits: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."]
         
         //Fucntions that will change the model
-        func performAction (for Button: String){
-            
+        func performAction (for button: String){
+            if digits.contains(button) {
+                number.addDigit(button)
+            }
+            else {
+                if number.value != nil {
+                    calculator.setOperand(Decimal(string: number.value!)!) //if get an error at some point//check this part
+                    number.clear() //making sure we don't add to the previous number
+                }
+                calculator.performOperation(button)
+            }
         }
         
         //Functions that will get a current value

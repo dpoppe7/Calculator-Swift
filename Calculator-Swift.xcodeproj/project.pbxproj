@@ -109,6 +109,8 @@
 		B6BE526028C7C367002F033F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B6BE52A428D1017B002F033F /* CalculatorView.swift */,
+				B6BE52A728D103D2002F033F /* CalculatorViewModel.swift */,
 				B6BE526128C7C367002F033F /* CalculatorApp.swift */,
 				B6BE526228C7C367002F033F /* ContentView.swift */,
 				B6BE52A328C7D0A1002F033F /* Models */,
@@ -159,8 +161,6 @@
 			children = (
 				B6BE529D28C7C597002F033F /* CalculatorBrain.swift */,
 				B6BE52A028C7D095002F033F /* NumberValue.swift */,
-				B6BE52A428D1017B002F033F /* CalculatorView.swift */,
-				B6BE52A728D103D2002F033F /* CalculatorViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
