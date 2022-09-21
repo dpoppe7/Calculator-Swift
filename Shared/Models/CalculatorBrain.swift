@@ -21,6 +21,7 @@ struct CalculatorBrain {
         case equals
         case clear
     }
+
     
     var operations: [String : Operation] = [
         //"+": .binaryOperator({(x: Decimal, y: Decimal) in x + y})   //removed explicitit return type
@@ -28,6 +29,9 @@ struct CalculatorBrain {
         "-": .binaryOperator(-),
         "*": .binaryOperator(*),
         "÷": .binaryOperator(/),
+        //"√": .unaryOperator({(num) in sqrt((float)num)}),
+        "%": .unaryOperator({(num) in num/100}),
+        "X2": .unaryOperator({(pow) in pow*pow}),
         "=": .equals,
         "C": .clear
     ]

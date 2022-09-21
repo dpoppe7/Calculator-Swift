@@ -20,7 +20,8 @@ extension CalculatorView {
                 ["4", "5", "6", "-"],
                 ["1", "2", "3", "*"],
                 ["0", "C", ".", "÷"],
-                ["="]
+                ["X2","%", "="]
+                //pi, e, goldrat, root, +/-
             ]
         }
         
@@ -47,6 +48,15 @@ extension CalculatorView {
             }
             else {
                 return calculator.displayText
+            }
+        }
+        
+        func isDigit(for button: String) -> Bool {
+            if digits.contains(button) && button != "."{
+                return true
+            }
+            else{
+                return false
             }
         }
     }

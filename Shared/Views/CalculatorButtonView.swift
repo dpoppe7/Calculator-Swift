@@ -20,7 +20,7 @@ extension CalculatorView {
             .buttonStyle(CalculatorButtonStyle(
                 size: getButtonSize(),
                 //backgroundColor: getBackgroundColor(of: button),
-                backgroundColor: .black,
+                backgroundColor: getBackgroundColor(of: button),
                 foregroundColor: .white
             ))
         }
@@ -33,13 +33,13 @@ extension CalculatorView {
             return (screenWidth - numberOfSpaces * Constants.padding) / buttonCount
         }
         
-        /*private func getBackgroundColor(of button: String) -> Color {
-            if viewModel.isDigit(button) {
-                return Color(.blue)
+        private func getBackgroundColor(of button: String) -> Color {
+            if viewModel.isDigit(for: button) {
+                return Color(.black)
             }
             else {
-                return Color(.red )
+                return Color(.gray )
             }
-        }*/
+        }
     }
 }
