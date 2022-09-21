@@ -10,6 +10,7 @@ import Foundation
 //getting one digit at a time and contruct a number
 struct NumberValue {
     private(set) var value: String?
+     
     mutating func addDigit(_ digit: String) {
         if digit == "." {
             if value == nil {

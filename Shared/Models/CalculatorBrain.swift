@@ -10,6 +10,8 @@ import Foundation
 struct CalculatorBrain {
     
     private var accumulator: Decimal? //optional decimal
+    //may want to add a string to keep trach if the apeareance
+    //of this information rather than relying on whatever shows up
     
     //What kind of operators can we have?
     enum Operation {
@@ -31,7 +33,9 @@ struct CalculatorBrain {
     ]
      
     mutating func setOperand (_ operand: Decimal) {
-        accumulator = operand;
+        if accumulator == nil {
+            accumulator = operand;
+        }
     }
     
     var displayText: String {
@@ -44,10 +48,12 @@ struct CalculatorBrain {
         if let operation = operations[symbol] {
             switch operation {
             case . constant(let value):
-                accumulator = value
+                if accumulator == nil {
+                    accumulator = value
+                }
             
             case .unaryOperator(let function):
-                if accumulator != nil {
+                if accumulator != nil && operationInProgress == nil{
                     accumulator = function(accumulator!) //! forcing to assign value since accumulator was optional
                 }
                 
@@ -55,6 +61,7 @@ struct CalculatorBrain {
                 performOperationInProgress()
                 if accumulator != nil {
                     operationInProgress = OperationInProgress(firstOperand: accumulator!, function: function)
+                    accumulator = nil
                 }
             case .equals:
                 performOperationInProgress()  //retunrs the resulted value, performs operation
