@@ -10,7 +10,7 @@ import Foundation
 struct CalculatorBrain {
     
     private var accumulator: Decimal? //optional decimal
-    //may want to add a string to keep trach if the apeareance
+    //may want to add a string to keep track df the apeareance
     //of this information rather than relying on whatever shows up
     
     //What kind of operators can we have?
