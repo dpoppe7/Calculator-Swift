@@ -29,9 +29,13 @@ struct CalculatorBrain {
         "-": .binaryOperator(-),
         "*": .binaryOperator(*),
         "÷": .binaryOperator(/),
-        //"√": .unaryOperator({(num) in sqrt((float)num)}),
         "%": .unaryOperator({(num) in num/100}),
         "X2": .unaryOperator({(pow) in pow*pow}),
+        "pi": .unaryOperator({(piNum) in piNum*0 + 3.14159265}),
+        "e": .unaryOperator({(eNum) in eNum*0 + 2.71828183}),
+        "+/-": .unaryOperator({(invNum) in invNum*(-1)}),
+        "++": .unaryOperator({(incNum) in incNum+1}),
+        "--": .unaryOperator({(incNum) in incNum-1}),
         "=": .equals,
         "C": .clear
     ]
@@ -41,7 +45,7 @@ struct CalculatorBrain {
             accumulator = operand;
         }
     }
-    
+        
     var displayText: String {
         //if there is a value in the accumulator, otherwise give the value of 0
         return "\(accumulator ?? 0)"
@@ -93,6 +97,4 @@ struct CalculatorBrain {
             return function(firstOperand, secondOperand)
         }
     }
-    
-    //add unary operands
 }
